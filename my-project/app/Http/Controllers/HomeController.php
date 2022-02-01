@@ -67,6 +67,7 @@ public function eliminar($id){
      */
     public function index()
     {
-        return view('home');
+        $chollos= Chollo::all();
+        return redirect()->route('chollos.cargar',compact("chollos"));
     }
 }

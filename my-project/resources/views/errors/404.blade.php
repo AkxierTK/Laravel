@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
-<body style="background-image:url({{ asset('media/404.jpg')}});">
+<body style="background-image:url({{ asset('media/1-10.webp')}});background-repeat: no-repeat; width:100%">
    
 </body>
 </html>
