@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +26,21 @@
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active mr-2"><a href="{{route('chollos.cargar')}}" class="nav-link inicioB">Inicio<span class="sr-only">(current)</span></a></li>
-            <li class="nav-item active mr-2"><a href="#" class="nav-link registrar"><img src="{{asset('media/stickman.png')}}" width="24" height="24" alt="CHOLLO" class="d-inline-block align-middle">Iniciar Sesión/Regístrate</a></li>
+            @guest
+            @if (Route::has('login'))
+                    <li class="nav-item active mr-2"><a href="{{ route('login') }}" class="nav-link registrar">
+                      <img src="{{asset('media/stickman.png')}}" width="24" height="24" alt="CHOLLO" class="d-inline-block align-middle">Iniciar Sesión/Regístrate</a></li>
+            @endif
+            @else
+            <li class="nav-item active mr-2"><a href="{{ route('logout') }}" class="nav-link registrar" onclick="event.preventDefault();
+              document.getElementById('logout-form').submit();">
+ 
+
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>Cerrar Sesión</a></li>
+            @endguest
             <li class="nav-item active"><a href="{{ route('destacados') }}" class="nav-link comparte">Destacados</a></li>
             <li class="nav-item active"><a href="{{ route('nuevos') }}" class="nav-link comparte">Nuevos</a></li>
             <li class="nav-item active"><a href="{{ route('crear') }}" class="nav-link comparte">+ Comparte</a></li>
