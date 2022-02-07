@@ -7,9 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Chollo extends Model
 {
-    use HasFactory;
-    public function Usuario()
+  use HasFactory;
+  public function user()
   {
-      return $this -> belongsTo(User::class);
+    return $this->belongsTo(User::class);
+  }
+
+  public function categoria()
+  {
+    return $this->belongsTo(Categoria::class);
   }
 }

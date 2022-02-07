@@ -22,7 +22,7 @@
                 </div>
                 <span class="text-uppercase font-weight-bold display-4 mb-1">Crea Chollo</span>
                 @if(session('mensaje'))
-                <p>{{session('mensaje')}}</p>
+                <p><a href="{{route('chollos.cargar')}}">{{session('mensaje')}}</a></p>
               @endif
                 <form action="{{ route('editarCholloDB') }}" method="post">
                   @csrf {{-- Cláusula para obtener un token de formulario al enviarlo --}}

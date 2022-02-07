@@ -24,7 +24,7 @@ class CreateChollosTable extends Migration
             $table->float("precio");
             $table->float("precioDescuento");
             $table->boolean("disponible");
-            $table->unsignedInteger("user_id");
+            $table->bigInteger("user_id")->nullable();
         });
     }
     /**

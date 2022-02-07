@@ -12,7 +12,7 @@
   <title>Chollo Severo</title>
 </head>
 
-<body class="inicio">
+<body class="d-flex flex-column h-100 inicio">
   <header>
     <nav class="navbar navbar-expand-lg  navbar-dark bg-dark shadow-sm">
       <div class="container">
@@ -34,8 +34,6 @@
             @else
             <li class="nav-item active mr-2"><a href="{{ route('logout') }}" class="nav-link registrar" onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
- 
-
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
@@ -52,12 +50,10 @@
   @if(session('mensaje'))
     <p>{{session('mensaje')}}</p>
 @endif
+  @yield('login')
   @yield('apartado')
-  <footer>
-  <div style="background-color:rgb(24, 22, 22);width:100%;text-align:center; height:50px;color:white;top:95%;position:relative;">
+  <div class="footer mt-auto py-3 bg-dark text-center">
     <p>CHOLLO SEVERO &copy;CopyRight {{date("Y")}}</p>
-</div>
-  </footer>
+  </div>
 </body>
-
 </html>

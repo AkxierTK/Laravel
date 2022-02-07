@@ -1,3 +1,4 @@
+
 .test{
  
         background: linear-gradient(270deg, #df8126, #f74747);
@@ -29,7 +30,6 @@
     font-size: 30px;
     margin-bottom: 2em;
 }
-
 .registrar{
     background-color: black;
     border-radius: 5px;
@@ -69,8 +69,11 @@
     background-color: rgb(247, 146, 14);
 }
 
+
 .inicio{
     background-color: rgb(233, 227, 227);
+    margin: 0;
+    min-height: 100%;
 }
 
 .chollo{
@@ -112,10 +115,18 @@
     font-size: 20px;
 }
 .categoria{
-    width: 40%;
+    width: 55%;
     font-size:18px;
     font-weight: bold;
     margin-top: 5em;
+}
+.user{
+    width: 30%;
+    font-size:18px;
+    font-weight: bold;
+    margin-top: 5em;
+    height: 300px;
+    margin-right: 0.5em;
 }
 .flex{
     display: flex;
@@ -159,8 +170,7 @@
 }
 .botones{
     position: relative;
-    width: 40%;
-    margin-left: 10em;
+    width: 67.5%;
     margin-top: 4.75em;
 }
 .login {

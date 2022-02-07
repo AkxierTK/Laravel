@@ -21,7 +21,7 @@
                   <img src="{{URL::asset('media/logoChollo.png')}}"  alt="logo" class="logo">
                 </div>
                 @if(session('mensaje'))
-                  <p>{{session('mensaje')}}</p>
+                  <p><a href="{{route('chollos.cargar')}}">{{session('mensaje')}}</a></p>
                 @endif
                 <span class="text-uppercase font-weight-bold display-4 mb-1">Crea Chollo</span>
                 <form action="{{ route('cholloCreado') }}" method="post">

@@ -20,7 +20,8 @@ class HomeController extends Controller
                 'categoria'=>'required',
                 'precio'=>'required',
                 'precioDescuento'=>'required'
-        ]);    
+        ]); 
+            $id = auth()->user()->id;
             $nuevoChollo = new Chollo();
             $nuevoChollo->titulo=$request->titulo;
             $nuevoChollo->descripcion=$request->descripcion;
@@ -30,10 +31,14 @@ class HomeController extends Controller
             $nuevoChollo->precio=$request->precio;
             $nuevoChollo->precioDescuento=$request->precioDescuento;
             $nuevoChollo->disponible=true;
+            $nuevoChollo->user_id=$id;
             //$file=$request->file('archivo');
            // Storage::disk(public_path())->put($request->id."chollo-severo.png", $file);
             $nuevoChollo->save();
-            return back()->with('mensaje',"Chollo creado");
+            return back()->with('mensaje',"Chollo creado, ir a inicio");
+    }
+    public function crearVista(){
+        return view("chollos.crear");
     }
 
     public function editar($id){
@@ -51,7 +56,7 @@ public function editarDB(Request $request){
         $nuevoChollo->precioDescuento=$request->precioDescuento;
         $nuevoChollo->disponible=true;
         $nuevoChollo->save();   
-        return back()->with('mensaje',"Chollo editado");
+        return back()->with('mensaje',"Chollo editado, ir a inicio");
 }
 public function eliminar($id){
         $chollo = Chollo::findOrFail($id);
